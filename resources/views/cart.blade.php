@@ -5,6 +5,13 @@
         <meta name="description" content="This is the description">
         <link rel="stylesheet" href="{{ asset('assets/cart/cart.css') }}" />
         <script src="{{ asset('assets/cart/cart.js') }}" async></script>
+        <script type="text/javascript">
+            var data = localStorage.getItem("cart");
+            if (data != null) {
+                data = null
+            }
+            localStorage.setItem("cart", data)
+        </script>
     </head>
     <body>
         <section class="container content-section">
@@ -84,11 +91,11 @@
                 <strong class="cart-total-title">Total</strong>
                 <span class="cart-total-price">Rp. 0</span>
             </div>
-            <a href="/cart/order-tracking"><button class="btn btn-primary btn-purchase" type="button">PURCHASE</button></a>
+            <a><button class="btn btn-primary btn-purchase" type="button">PURCHASE</button></a>
         </section>
         <footer class="main-footer">
             <div class="container main-footer-container">
-                <h3 class="band-name">Pomelo Cookies</h3>
+                <a href="/" style="text-decoration: none ;"><h3 class="band-name">Pomelo Cookies</h3></a>
                 <ul class="nav footer-nav">
                     <li>
                         <a href="https://play.google.com" target="_blank">
